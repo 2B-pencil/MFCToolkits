@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="vc100|Win32">
+      <Configuration>vc100</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vc100|x64">
+      <Configuration>vc100</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vc110|Win32">
+      <Configuration>vc110</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vc110|x64">
+      <Configuration>vc110</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vc140|Win32">
+      <Configuration>vc140</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vc140|x64">
+      <Configuration>vc140</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vc141|Win32">
+      <Configuration>vc141</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vc141|x64">
+      <Configuration>vc141</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vc142|Win32">
+      <Configuration>vc142</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vc142|x64">
+      <Configuration>vc142</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vc143d|Win32">
+      <Configuration>vc143d</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vc143|Win32">
+      <Configuration>vc143</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vc143d|x64">
+      <Configuration>vc143d</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vc143|x64">
+      <Configuration>vc143</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{E0865B03-DD19-472D-B94C-08CCF44A6B2D}</ProjectGuid>
+    <Keyword>MFCDLLProj</Keyword>
+    <RootNamespace>MFCGridCtrl</RootNamespace>
+    <!--WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion-->
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='vc143'or'$(Configuration)'=='vc142'or'$(Configuration)'=='vc143d'">
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='vc140'or'$(Configuration)'=='vc110'or'$(Configuration)'=='vc100'or'$(Configuration)'=='vc141'">
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='vc143d'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='vc143'or'$(Configuration)'=='vc142'or'$(Configuration)'=='vc141'or'$(Configuration)'=='vc140'or'$(Configuration)'=='vc110'or'$(Configuration)'=='vc100'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='vc143d'or'$(Configuration)'=='vc143'" Label="Configuration">
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='vc142d'or'$(Configuration)'=='vc142'" Label="Configuration">
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='vc141d'or'$(Configuration)'=='vc141'" Label="Configuration">
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='vc140d'or'$(Configuration)'=='vc140'" Label="Configuration">
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='vc110d'or'$(Configuration)'=='vc110'" Label="Configuration">
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='vc100d'or'$(Configuration)'=='vc100'" Label="Configuration">
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <TargetName>$(ProjectName)$(Configuration)</TargetName>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)$(Platform)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>copy "$(TargetDir)\$(TargetFileName)" "$(ProjectDir)..\..\Library\Library\MFCGridCtrl\$(TargetFileName)"
+copy "$(TargetDir)\$(TargetName).lib" "$(ProjectDir)..\..\Library\Library\MFCGridCtrl\$(TargetName).lib"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='vc143|x64'">
+      copy "$(TargetDir)\$(TargetFileName)" "$(ProjectDir)..\..\Library\Library\MFCGridCtrl\$(TargetFileName)"
+      copy "$(TargetDir)\$(TargetFileName)" "D:\Software\CurtainToolKits\Dependencies\$(TargetFileName)"
+copy "$(TargetDir)\$(TargetName).lib" "$(ProjectDir)..\..\Library\Library\MFCGridCtrl\$(TargetName).lib"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='vc143d'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='vc143'or'$(Configuration)'=='vc142'or'$(Configuration)'=='vc141'or'$(Configuration)'=='vc140'or'$(Configuration)'=='vc110'or'$(Configuration)'=='vc100'" Label="Configuration">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='vc143d|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_WINDOWS;_DEBUG;_AFXEXT;_TAOCOMMONLIB_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <SDLCheck>false</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <ModuleDefinitionFile>.\MFCGridCtrl.def</ModuleDefinitionFile>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='vc143d|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_AFXEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <ModuleDefinitionFile>.\MFCGridCtrl.def</ModuleDefinitionFile>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='vc143|Win32'or'$(Configuration)|$(Platform)'=='vc142|Win32'or'$(Configuration)|$(Platform)'=='vc141|Win32'or'$(Configuration)|$(Platform)'=='vc140|Win32'or'$(Configuration)|$(Platform)'=='vc110|Win32'or'$(Configuration)|$(Platform)'=='vc100|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_AFXEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>.\MFCGridCtrl.def</ModuleDefinitionFile>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='vc143|x64'or'$(Configuration)|$(Platform)'=='vc142|x64'or'$(Configuration)|$(Platform)'=='vc141|x64'or'$(Configuration)|$(Platform)'=='vc140|x64'or'$(Configuration)|$(Platform)'=='vc110|x64'or'$(Configuration)|$(Platform)'=='vc100|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_AFXEXT;_TAOCOMMONLIB_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>.\MFCGridCtrl.def</ModuleDefinitionFile>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <CompileAsManaged>false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="MFCGridCtrl.cpp" />
+    <ClCompile Include="MFCGridCtrl\CellTypes\GridCellButton.cpp" />
+    <ClCompile Include="MFCGridCtrl\CellTypes\GridCellCheck.cpp" />
+    <ClCompile Include="MFCGridCtrl\CellTypes\GridCellCombo.cpp" />
+    <ClCompile Include="MFCGridCtrl\CellTypes\GridCellDateTime.cpp" />
+    <ClCompile Include="MFCGridCtrl\CellTypes\GridCellGroup.cpp" />
+    <ClCompile Include="MFCGridCtrl\CellTypes\GridCellNumeric.cpp" />
+    <ClCompile Include="MFCGridCtrl\CellTypes\GridCellTerminal.cpp" />
+    <ClCompile Include="MFCGridCtrl\CellTypes\GridURLCell.cpp" />
+    <ClCompile Include="MFCGridCtrl\GridCell.cpp" />
+    <ClCompile Include="MFCGridCtrl\GridCellBase.cpp" />
+    <ClCompile Include="MFCGridCtrl\GridCtrl.cpp" />
+    <ClCompile Include="MFCGridCtrl\GridCtrlUtil.cpp" />
+    <ClCompile Include="MFCGridCtrl\GridDropTarget.cpp" />
+    <ClCompile Include="MFCGridCtrl\InPlaceEdit.cpp" />
+    <ClCompile Include="MFCGridCtrl\TitleTip.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MFCGridCtrl.def" />
+    <None Include="res\MFCGridCtrl.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="MFCGridCtrl\CellRange.h" />
+    <ClInclude Include="MFCGridCtrl\CellTypes\GridCellButton.h" />
+    <ClInclude Include="MFCGridCtrl\CellTypes\GridCellCheck.h" />
+    <ClInclude Include="MFCGridCtrl\CellTypes\GridCellCombo.h" />
+    <ClInclude Include="MFCGridCtrl\CellTypes\GridCellDateTime.h" />
+    <ClInclude Include="MFCGridCtrl\CellTypes\GridCellGroup.h" />
+    <ClInclude Include="MFCGridCtrl\CellTypes\GridCellNumeric.h" />
+    <ClInclude Include="MFCGridCtrl\CellTypes\GridCellTerminal.h" />
+    <ClInclude Include="MFCGridCtrl\CellTypes\GridURLCell.h" />
+    <ClInclude Include="MFCGridCtrl\GridCell.h" />
+    <ClInclude Include="MFCGridCtrl\GridCellBase.h" />
+    <ClInclude Include="MFCGridCtrl\GridCtrl.h" />
+    <ClInclude Include="MFCGridCtrl\GridCtrlUtil.h" />
+    <ClInclude Include="MFCGridCtrl\GridDropTarget.h" />
+    <ClInclude Include="MFCGridCtrl\InPlaceEdit.h" />
+    <ClInclude Include="MFCGridCtrl\MemDC.h" />
+    <ClInclude Include="MFCGridCtrl\TitleTip.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MFCGridCtrl.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
