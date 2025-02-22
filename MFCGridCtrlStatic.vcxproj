@@ -62,7 +62,7 @@
     <VCProjectVersion>17.0</VCProjectVersion>
     <ProjectGuid>{E0865B03-DD19-472D-B94C-08CCF44A6B2D}</ProjectGuid>
     <Keyword>MFCDLLProj</Keyword>
-    <RootNamespace>MFCGridCtrl</RootNamespace>
+    <RootNamespace>MFCGridCtrlStatic</RootNamespace>
     <!--WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion-->
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)'=='vc143'or'$(Configuration)'=='vc142'or'$(Configuration)'=='vc143d'">
@@ -73,7 +73,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <WholeProgramOptimization>false</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
@@ -122,10 +122,6 @@
     </ClCompile>
     <PostBuildEvent>
       <Command>copy "$(TargetDir)\$(TargetFileName)" "$(ProjectDir)..\..\Library\Library\MFCGridCtrl\$(TargetFileName)"
-copy "$(TargetDir)\$(TargetName).lib" "$(ProjectDir)..\..\Library\Library\MFCGridCtrl\$(TargetName).lib"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='vc143|x64'">
-      copy "$(TargetDir)\$(TargetFileName)" "$(ProjectDir)..\..\Library\Library\MFCGridCtrl\$(TargetFileName)"
-      copy "$(TargetDir)\$(TargetFileName)" "..\..\..\..\应用\CurtainToolKits\Dependencies\$(TargetFileName)"
 copy "$(TargetDir)\$(TargetName).lib" "$(ProjectDir)..\..\Library\Library\MFCGridCtrl\$(TargetName).lib"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
