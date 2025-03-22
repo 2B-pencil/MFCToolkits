@@ -21,7 +21,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MFCGridCtrl.cpp">
+    <ClCompile Include="MFCToolkits.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="dllmain.cpp">
@@ -77,10 +77,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="MFCGridCtrl.def">
+    <None Include="MFCToolkits.def">
       <Filter>源文件</Filter>
     </None>
-    <None Include="res\MFCGridCtrl.rc2">
+    <None Include="res\MFCToolkits.rc2">
       <Filter>资源文件</Filter>
     </None>
   </ItemGroup>
@@ -150,7 +150,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="MFCGridCtrl.rc">
+    <ResourceCompile Include="MFCToolkits.rc">
       <Filter>资源文件</Filter>
     </ResourceCompile>
   </ItemGroup>

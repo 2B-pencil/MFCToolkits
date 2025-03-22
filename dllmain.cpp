@@ -10,7 +10,7 @@
 #define new DEBUG_NEW
 #endif
 
-static AFX_EXTENSION_MODULE MFCGridCtrlDLL = { false, nullptr };
+static AFX_EXTENSION_MODULE MFCTOOLKITSDLL = { false, nullptr };
 
 extern "C" int APIENTRY
 DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpReserved)
@@ -20,10 +20,10 @@ DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpReserved)
 
 	if (dwReason == DLL_PROCESS_ATTACH)
 	{
-		TRACE0("MFCGridCtrl.DLL 正在初始化!\n");
+		TRACE0("MFCToolkits.DLL 正在初始化!\n");
 
 		// 扩展 DLL 一次性初始化
-		if (!AfxInitExtensionModule(MFCGridCtrlDLL, hInstance))
+		if (!AfxInitExtensionModule(MFCTOOLKITSDLL, hInstance))
 			return 0;
 
 		// 将此 DLL 插入到资源链中
@@ -38,15 +38,15 @@ DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpReserved)
 		//  规则 DLL 的资源链，并将导致严重的
 		//  问题。
 
-		new CDynLinkLibrary(MFCGridCtrlDLL);
+		new CDynLinkLibrary(MFCTOOLKITSDLL);
 
 	}
 	else if (dwReason == DLL_PROCESS_DETACH)
 	{
-		TRACE0("MFCGridCtrl.DLL 正在终止!\n");
+		TRACE0("MFCToolkits.DLL 正在终止!\n");
 
 		// 在调用析构函数之前终止该库
-		AfxTermExtensionModule(MFCGridCtrlDLL);
+		AfxTermExtensionModule(MFCTOOLKITSDLL);
 	}
 	return 1;   // 确定
 }

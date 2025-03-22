@@ -1,6 +1,6 @@
 ﻿//{{NO_DEPENDENCIES}}
 // Microsoft Visual C++ generated include file.
-// 供 MFCGridCtrl.rc 使用
+// 供 MFCToolkits.rc 使用
 //
 
 // 新对象的下一组默认值
