@@ -10,7 +10,7 @@
 #include <gdiplus.h>
 #pragma warning(pop)
 // 
-#if (!defined(_MSC_VER) && __cplusplus < 201103L) || (defined(_MSC_VER) && _MSC_VER < 1900)   // C++11 is not supported.
+#if (!defined(_MSC_VER) && __cplusplus < 201103L) || (defined(_MSC_VER) && _MSC_VER < 1600)   // C++11 is not supported.
 	#define nullptr  NULL
 	#define override
 #endif
