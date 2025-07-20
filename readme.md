@@ -142,11 +142,11 @@ MFCToolkits/
 ## 更多资源
 
 每个控件组件都有详细的 Markdown 文档，包含使用示例、效果图和技术细节：
-- [CGridListCtrlEx 文档](doc/CGridListCtrlEx.htm)
-- [GridCtrl 文档](doc/GridCtrl.md)
-- [MultiPaneCtrl 文档](doc/MultiPaneCtrl.md)
-- [OutlookTabCtrl 文档](doc/OutlookTabCtrl.md)
-- [PngAnimation 文档](doc/PngAnimation.md)
-- [SplitterCtrl 文档](doc/SplitterCtrl.md)
-- [TabCtrl 文档](doc/TabCtrl.md)
-- [ToolBoxCtrl 文档](doc/ToolBoxCtrl.md)
+- [CGridListCtrlEx 文档](Doc/CGridListCtrlEx.htm)
+- [GridCtrl 文档](Doc/GridCtrl.md)
+- [MultiPaneCtrl 文档](Doc/MultiPaneCtrl.md)
+- [OutlookTabCtrl 文档](Doc/OutlookTabCtrl.md)
+- [PngAnimation 文档](Doc/PngAnimation.md)
+- [SplitterCtrl 文档](Doc/SplitterCtrl.md)
+- [TabCtrl 文档](Doc/TabCtrl.md)
+- [ToolBoxCtrl 文档](Doc/ToolBoxCtrl.md)
