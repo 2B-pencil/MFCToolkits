@@ -293,7 +293,7 @@ public:
     // ***************************************************************************** //
 
     int GetSelectedCount() const                  { return (int)m_SelectedCellMap.GetCount(); }
-	bool IsRowSelected(unsigned int nRow) const;	// vvu添加
+	bool IsRowSelected(unsigned int nRow) const;	// 
 
     CCellID SetFocusCell(CCellID cell);
     CCellID SetFocusCell(int nRow, int nCol);
@@ -403,6 +403,8 @@ public:
     COLORREF GetItemBkColour(int nRow, int nCol) const;
     BOOL   SetItemFgColour(int nRow, int nCol, COLORREF cr = CLR_DEFAULT);
     COLORREF GetItemFgColour(int nRow, int nCol) const;
+    BOOL   SetItemFrColour(int nRow, int nCol, COLORREF cr = CLR_DEFAULT);
+    COLORREF GetItemFrColour(int nRow, int nCol) const;
     BOOL SetItemFont(int nRow, int nCol, const LOGFONT* lf);
     const LOGFONT* GetItemFont(int nRow, int nCol);
 
@@ -447,14 +449,9 @@ public:
     BOOL IsCellSelected(int nRow, int nCol) const;
     BOOL IsCellSelected(CCellID &cell) const;
 
-	//////////////////////////////////////////////////////////////////////////
-	// 张帆添加的方法
-	// 设置某一行是否可见（有问题）
-	void SetColumnVisible(int nCol, BOOL bVisible = true);		// 张帆添加
-	// 设置某一行被选中
-	void SetRowSelected( int rowIndex );
-	//////////////////////////////////////////////////////////////////////////
 
+	void SetColumnVisible(int nCol, BOOL bVisible = true);	
+	void SetRowSelected( int rowIndex );
     // SetRedraw stops/starts redraws on things like changing the # rows/columns
     // and autosizing, but not for user-intervention such as resizes
     void SetRedraw(BOOL bAllowDraw, BOOL bResetScrollBars = FALSE);
@@ -784,6 +781,7 @@ protected:
 	afx_msg void OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags);
     afx_msg void OnChar(UINT nChar, UINT nRepCnt, UINT nFlags);
     afx_msg void OnLButtonDblClk(UINT nFlags, CPoint point);
+ 	afx_msg void OnRButtonDblClk(UINT nFlags, CPoint point);
     afx_msg BOOL OnEraseBkgnd(CDC* pDC);
     afx_msg void OnSysKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags);
     afx_msg void OnUpdateEditSelectAll(CCmdUI* pCmdUI);

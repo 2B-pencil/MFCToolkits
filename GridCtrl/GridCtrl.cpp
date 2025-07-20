@@ -4,7 +4,7 @@
 //
 // Written by Chris Maunder <chris@codeproject.com>
 // Copyright (c) 1998-2005. All Rights Reserved.
-/
+//
 // The code contained in this file was based on the original
 // WorldCom Grid control written by Joe Willcoxson,
 //        mailto:chinajoe@aol.com
@@ -1656,11 +1656,6 @@ void CGridCtrl::OnDraw(CDC* pDC)
             rect.right = rect.left + GetColumnWidth(col) - 1;
 
             pCell = GetCell(row, col);
-            //             if (pCell)
-            // 			{
-            // 				pCell->SetCoords(row,col);
-            //                 pCell->Draw(pDC, row, col, rect, FALSE);
-            // 			}
             if (pCell)
             {
                 //Used for merge
@@ -2527,7 +2522,6 @@ COleDataSource* CGridCtrl::CopyTextFromGrid()
             str += _T("\r\n");
 
         int nCount = str.GetLength();
-        // 由于T2A的作用是将TCHAR字符串转换为char字符串，因此nCount的大小应该是字符串用char字符串表示的大小
         sf.Write(T2A(str.GetBuffer(1)), nCount);
         str.ReleaseBuffer();
     }
@@ -2567,7 +2561,7 @@ BOOL CGridCtrl::PasteTextToGrid(CCellID cell, COleDataObject* pDataObject,
 
     // CF_TEXT is ANSI text, so we need to allocate a char* buffer
     // to hold this.
-    char* szBuffer = new char[::GlobalSize(hmem)];		// 张帆将其修改为szBuffer
+    LPSTR szBuffer = new char[::GlobalSize(hmem)]; // FIX: Use LPSTR char here
     if (!szBuffer)
         return FALSE;
 
@@ -2576,8 +2570,8 @@ BOOL CGridCtrl::PasteTextToGrid(CCellID cell, COleDataObject* pDataObject,
 
     // Now store in generic TCHAR form so we no longer have to deal with
     // ANSI/UNICODE problems
-    CString strText = (CString)szBuffer;
-    delete[]szBuffer;
+    CString strText(szBuffer);
+    delete szBuffer;
 
     // Parse text data and set in cells...
     strText.LockBuffer();
@@ -4116,8 +4110,7 @@ int CGridCtrl::InsertColumn(LPCTSTR strHeading,
     }
     END_CATCH
 
-        // 修正插入列的Bug，张帆添加
-        int nCols = m_nCols + 1;
+    int nCols = m_nCols + 1;
     m_arColOrder.resize(nCols);  // Reset Column Order
     for (int i = 0; i < nCols; ++i)
     {
@@ -5063,6 +5056,30 @@ COLORREF CGridCtrl::GetItemFgColour(int nRow, int nCol) const
         return 0;
 
     return pCell->GetTextClr();
+}
+
+BOOL CGridCtrl::SetItemFrColour(int nRow, int nCol, COLORREF cr /* = CLR_DEFAULT */)
+{
+    if (GetVirtualMode())
+        return FALSE;
+
+    CGridCellBase* pCell = GetCell(nRow, nCol);
+    ASSERT(pCell);
+    if (!pCell)
+        return FALSE;
+
+    pCell->SetFrameClr(cr);
+    return TRUE;
+}
+
+COLORREF CGridCtrl::GetItemFrColour(int nRow, int nCol) const
+{
+    CGridCellBase* pCell = GetCell(nRow, nCol);
+    ASSERT(pCell);
+    if (!pCell)
+        return 0;
+
+    return pCell->GetFrameClr();
 }
 
 BOOL CGridCtrl::SetItemFont(int nRow, int nCol, const LOGFONT* plf)
@@ -6255,6 +6272,23 @@ void CGridCtrl::OnLButtonDblClk(UINT nFlags, CPoint point)
     CWnd::OnLButtonDblClk(nFlags, point);
 }
 
+void CGridCtrl::OnRButtonDblClk(UINT nFlags, CPoint point)
+{
+    CCellID cell = GetCellFromPt(point);
+    if (!IsValid(cell))
+    {
+        //ASSERT(FALSE);
+        return;
+    }
+
+    if (m_MouseMode == MOUSE_NOTHING)
+    {
+        SendMessageToParent(cell.row, cell.col, NM_RDBLCLK);
+    }
+
+    CWnd::OnRButtonDblClk(nFlags, point);
+}
+
 void CGridCtrl::OnLButtonDown(UINT nFlags, CPoint point)
 {
 #ifdef GRIDCONTROL_USE_TITLETIPS
@@ -6590,6 +6624,7 @@ void CGridCtrl::OnLButtonDown(UINT nFlags, CPoint point)
             if (m_LeftClickDownCell.row < GetFixedRowCount())
             {
                 OnFixedRowClick(m_LeftClickDownCell);
+#ifndef GRIDCONTROL_NO_DRAGDROP
                 if (m_AllowReorderColumn && m_LeftClickDownCell.col >= GetFixedColumnCount())
                 {
                     ResetSelectedRange(); // TODO : This is not the better solution, as we do not see why clicking in column header should reset selection
@@ -6597,6 +6632,7 @@ void CGridCtrl::OnLButtonDown(UINT nFlags, CPoint point)
                     m_MouseMode = MOUSE_PREPARE_DRAG;
                     m_CurCol = m_LeftClickDownCell.col;
                 }
+#endif
             }
             else if (m_LeftClickDownCell.col < GetFixedColumnCount())
                 OnFixedColumnClick(m_LeftClickDownCell);

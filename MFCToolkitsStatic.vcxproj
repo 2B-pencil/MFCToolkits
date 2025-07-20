@@ -236,6 +236,18 @@ copy "$(TargetDir)\$(TargetName).lib" "$(ProjectDir)..\..\Library\Library\MFCToo
     <ClCompile Include="dllmain.cpp">
       <CompileAsManaged>false</CompileAsManaged>
     </ClCompile>
+    <ClCompile Include="GridListCtrlEx\CGridColumnTraitCombo.cpp" />
+    <ClCompile Include="GridListCtrlEx\CGridColumnTraitDateTime.cpp" />
+    <ClCompile Include="GridListCtrlEx\CGridColumnTraitEdit.cpp" />
+    <ClCompile Include="GridListCtrlEx\CGridColumnTraitHyperLink.cpp" />
+    <ClCompile Include="GridListCtrlEx\CGridColumnTraitImage.cpp" />
+    <ClCompile Include="GridListCtrlEx\CGridColumnTraitMultilineEdit.cpp" />
+    <ClCompile Include="GridListCtrlEx\CGridColumnTraitText.cpp" />
+    <ClCompile Include="GridListCtrlEx\CGridListCtrlEx.cpp" />
+    <ClCompile Include="GridListCtrlEx\CGridListCtrlGroups.cpp" />
+    <ClCompile Include="GridListCtrlEx\CGridRowTraitText.cpp" />
+    <ClCompile Include="GridListCtrlEx\CGridRowTraitXP.cpp" />
+    <ClCompile Include="GridListCtrlEx\ViewConfigSection.cpp" />
     <ClCompile Include="MFCToolkits.cpp" />
     <ClCompile Include="GridCtrl\CellTypes\GridCellButton.cpp" />
     <ClCompile Include="GridCtrl\CellTypes\GridCellCheck.cpp" />
@@ -252,10 +264,15 @@ copy "$(TargetDir)\$(TargetName).lib" "$(ProjectDir)..\..\Library\Library\MFCToo
     <ClCompile Include="GridCtrl\GridDropTarget.cpp" />
     <ClCompile Include="GridCtrl\InPlaceEdit.cpp" />
     <ClCompile Include="GridCtrl\TitleTip.cpp" />
+    <ClCompile Include="MultiPaneCtrl\DockingMarkers.cpp" />
+    <ClCompile Include="MultiPaneCtrl\MultiPaneCtrl.cpp" />
+    <ClCompile Include="OutlookTabCtrl\OutlookTabCtrl.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="SplitterCtrl\SplitterCtrl.cpp" />
     <ClCompile Include="TabCtrl\TabCtrl.cpp" />
+    <ClCompile Include="ToolBoxCtrl\ToolBoxCtrl.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MFCToolkits.def" />
@@ -280,10 +297,32 @@ copy "$(TargetDir)\$(TargetName).lib" "$(ProjectDir)..\..\Library\Library\MFCToo
     <ClInclude Include="GridCtrl\InPlaceEdit.h" />
     <ClInclude Include="GridCtrl\MemDC.h" />
     <ClInclude Include="GridCtrl\TitleTip.h" />
+    <ClInclude Include="GridListCtrlEx\CGridColumnTrait.h" />
+    <ClInclude Include="GridListCtrlEx\CGridColumnTraitCombo.h" />
+    <ClInclude Include="GridListCtrlEx\CGridColumnTraitDateTime.h" />
+    <ClInclude Include="GridListCtrlEx\CGridColumnTraitEdit.h" />
+    <ClInclude Include="GridListCtrlEx\CGridColumnTraitHyperLink.h" />
+    <ClInclude Include="GridListCtrlEx\CGridColumnTraitImage.h" />
+    <ClInclude Include="GridListCtrlEx\CGridColumnTraitMultilineEdit.h" />
+    <ClInclude Include="GridListCtrlEx\CGridColumnTraitText.h" />
+    <ClInclude Include="GridListCtrlEx\CGridColumnTraitVisitor.h" />
+    <ClInclude Include="GridListCtrlEx\CGridListCtrlEx.h" />
+    <ClInclude Include="GridListCtrlEx\CGridListCtrlGroups.h" />
+    <ClInclude Include="GridListCtrlEx\CGridRowTrait.h" />
+    <ClInclude Include="GridListCtrlEx\CGridRowTraitText.h" />
+    <ClInclude Include="GridListCtrlEx\CGridRowTraitVisitor.h" />
+    <ClInclude Include="GridListCtrlEx\CGridRowTraitXP.h" />
+    <ClInclude Include="GridListCtrlEx\ViewConfigSection.h" />
+    <ClInclude Include="MultiPaneCtrl\DockingMarkers.h" />
+    <ClInclude Include="MultiPaneCtrl\MultiPaneCtrl.h" />
+    <ClInclude Include="OutlookTabCtrl\OutlookTabCtrl.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="PngAnimation\PngAnimation.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="SplitterCtrl\SplitterCtrl.h" />
     <ClInclude Include="TabCtrl\TabCtrl.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="ToolBoxCtrl\ToolBoxCtrl.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MFCToolkits.rc" />

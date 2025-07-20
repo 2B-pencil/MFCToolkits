@@ -13,11 +13,32 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="MFCGridCtrl">
+    <Filter Include="GridCtrl">
       <UniqueIdentifier>{9a7bf93f-1870-4e78-922e-dce02621f4e4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="MFCGridCtrl\CellTypes">
+    <Filter Include="GridCtrl\CellTypes">
       <UniqueIdentifier>{d30e04e1-6dda-454b-9754-a33613d612bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TabCtrl">
+      <UniqueIdentifier>{00bce076-495b-40d5-b877-3025d4a6d19e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GridListCtrlEx">
+      <UniqueIdentifier>{727d5faf-fcdb-4c04-8048-73a294aa253c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MultiPaneCtrl">
+      <UniqueIdentifier>{1b1e699a-3855-4781-a15f-455a49ce17e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OutlookTabCtrl">
+      <UniqueIdentifier>{230ac977-7113-4df6-a5a4-3b406146c038}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PngAnimation">
+      <UniqueIdentifier>{e2021bd1-a34d-4d55-b80f-6ea183f0995a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SplitterCtrl">
+      <UniqueIdentifier>{15649ca7-7b1d-484d-810f-722ae54b8fd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ToolBoxCtrl">
+      <UniqueIdentifier>{e4dbda61-a47b-4819-a339-f0f15bfa09c7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -30,50 +51,104 @@
     <ClCompile Include="pch.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="MFCGridCtrl\GridCell.cpp">
-      <Filter>MFCGridCtrl</Filter>
+    <ClCompile Include="TabCtrl\TabCtrl.cpp">
+      <Filter>TabCtrl</Filter>
     </ClCompile>
-    <ClCompile Include="MFCGridCtrl\GridCellBase.cpp">
-      <Filter>MFCGridCtrl</Filter>
+    <ClCompile Include="GridCtrl\GridCell.cpp">
+      <Filter>GridCtrl</Filter>
     </ClCompile>
-    <ClCompile Include="MFCGridCtrl\GridCtrl.cpp">
-      <Filter>MFCGridCtrl</Filter>
+    <ClCompile Include="GridCtrl\GridCellBase.cpp">
+      <Filter>GridCtrl</Filter>
     </ClCompile>
-    <ClCompile Include="MFCGridCtrl\GridCtrlUtil.cpp">
-      <Filter>MFCGridCtrl</Filter>
+    <ClCompile Include="GridCtrl\GridCtrl.cpp">
+      <Filter>GridCtrl</Filter>
     </ClCompile>
-    <ClCompile Include="MFCGridCtrl\GridDropTarget.cpp">
-      <Filter>MFCGridCtrl</Filter>
+    <ClCompile Include="GridCtrl\GridCtrlUtil.cpp">
+      <Filter>GridCtrl</Filter>
     </ClCompile>
-    <ClCompile Include="MFCGridCtrl\InPlaceEdit.cpp">
-      <Filter>MFCGridCtrl</Filter>
+    <ClCompile Include="GridCtrl\GridDropTarget.cpp">
+      <Filter>GridCtrl</Filter>
     </ClCompile>
-    <ClCompile Include="MFCGridCtrl\TitleTip.cpp">
-      <Filter>MFCGridCtrl</Filter>
+    <ClCompile Include="GridCtrl\InPlaceEdit.cpp">
+      <Filter>GridCtrl</Filter>
     </ClCompile>
-    <ClCompile Include="MFCGridCtrl\CellTypes\GridCellButton.cpp">
-      <Filter>MFCGridCtrl\CellTypes</Filter>
+    <ClCompile Include="GridCtrl\TitleTip.cpp">
+      <Filter>GridCtrl</Filter>
     </ClCompile>
-    <ClCompile Include="MFCGridCtrl\CellTypes\GridCellCheck.cpp">
-      <Filter>MFCGridCtrl\CellTypes</Filter>
+    <ClCompile Include="GridCtrl\CellTypes\GridCellButton.cpp">
+      <Filter>GridCtrl\CellTypes</Filter>
     </ClCompile>
-    <ClCompile Include="MFCGridCtrl\CellTypes\GridCellCombo.cpp">
-      <Filter>MFCGridCtrl\CellTypes</Filter>
+    <ClCompile Include="GridCtrl\CellTypes\GridCellCheck.cpp">
+      <Filter>GridCtrl\CellTypes</Filter>
     </ClCompile>
-    <ClCompile Include="MFCGridCtrl\CellTypes\GridCellDateTime.cpp">
-      <Filter>MFCGridCtrl\CellTypes</Filter>
+    <ClCompile Include="GridCtrl\CellTypes\GridCellCombo.cpp">
+      <Filter>GridCtrl\CellTypes</Filter>
     </ClCompile>
-    <ClCompile Include="MFCGridCtrl\CellTypes\GridCellGroup.cpp">
-      <Filter>MFCGridCtrl\CellTypes</Filter>
+    <ClCompile Include="GridCtrl\CellTypes\GridCellDateTime.cpp">
+      <Filter>GridCtrl\CellTypes</Filter>
     </ClCompile>
-    <ClCompile Include="MFCGridCtrl\CellTypes\GridCellNumeric.cpp">
-      <Filter>MFCGridCtrl\CellTypes</Filter>
+    <ClCompile Include="GridCtrl\CellTypes\GridCellGroup.cpp">
+      <Filter>GridCtrl\CellTypes</Filter>
     </ClCompile>
-    <ClCompile Include="MFCGridCtrl\CellTypes\GridCellTerminal.cpp">
-      <Filter>MFCGridCtrl\CellTypes</Filter>
+    <ClCompile Include="GridCtrl\CellTypes\GridCellNumeric.cpp">
+      <Filter>GridCtrl\CellTypes</Filter>
     </ClCompile>
-    <ClCompile Include="MFCGridCtrl\CellTypes\GridURLCell.cpp">
-      <Filter>MFCGridCtrl\CellTypes</Filter>
+    <ClCompile Include="GridCtrl\CellTypes\GridCellTerminal.cpp">
+      <Filter>GridCtrl\CellTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl\CellTypes\GridURLCell.cpp">
+      <Filter>GridCtrl\CellTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="GridListCtrlEx\CGridColumnTraitCombo.cpp">
+      <Filter>GridListCtrlEx</Filter>
+    </ClCompile>
+    <ClCompile Include="GridListCtrlEx\CGridColumnTraitDateTime.cpp">
+      <Filter>GridListCtrlEx</Filter>
+    </ClCompile>
+    <ClCompile Include="GridListCtrlEx\CGridColumnTraitEdit.cpp">
+      <Filter>GridListCtrlEx</Filter>
+    </ClCompile>
+    <ClCompile Include="GridListCtrlEx\CGridColumnTraitHyperLink.cpp">
+      <Filter>GridListCtrlEx</Filter>
+    </ClCompile>
+    <ClCompile Include="GridListCtrlEx\CGridColumnTraitImage.cpp">
+      <Filter>GridListCtrlEx</Filter>
+    </ClCompile>
+    <ClCompile Include="GridListCtrlEx\CGridColumnTraitMultilineEdit.cpp">
+      <Filter>GridListCtrlEx</Filter>
+    </ClCompile>
+    <ClCompile Include="GridListCtrlEx\CGridColumnTraitText.cpp">
+      <Filter>GridListCtrlEx</Filter>
+    </ClCompile>
+    <ClCompile Include="GridListCtrlEx\CGridListCtrlEx.cpp">
+      <Filter>GridListCtrlEx</Filter>
+    </ClCompile>
+    <ClCompile Include="GridListCtrlEx\CGridListCtrlGroups.cpp">
+      <Filter>GridListCtrlEx</Filter>
+    </ClCompile>
+    <ClCompile Include="GridListCtrlEx\CGridRowTraitText.cpp">
+      <Filter>GridListCtrlEx</Filter>
+    </ClCompile>
+    <ClCompile Include="GridListCtrlEx\CGridRowTraitXP.cpp">
+      <Filter>GridListCtrlEx</Filter>
+    </ClCompile>
+    <ClCompile Include="GridListCtrlEx\ViewConfigSection.cpp">
+      <Filter>GridListCtrlEx</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiPaneCtrl\DockingMarkers.cpp">
+      <Filter>MultiPaneCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiPaneCtrl\MultiPaneCtrl.cpp">
+      <Filter>MultiPaneCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="ToolBoxCtrl\ToolBoxCtrl.cpp">
+      <Filter>ToolBoxCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="SplitterCtrl\SplitterCtrl.cpp">
+      <Filter>SplitterCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="OutlookTabCtrl\OutlookTabCtrl.cpp">
+      <Filter>OutlookTabCtrl</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -97,56 +172,125 @@
     <ClInclude Include="pch.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="MFCGridCtrl\CellRange.h">
-      <Filter>MFCGridCtrl</Filter>
+    <ClInclude Include="GridCtrl\CellRange.h">
+      <Filter>GridCtrl</Filter>
     </ClInclude>
-    <ClInclude Include="MFCGridCtrl\GridCell.h">
-      <Filter>MFCGridCtrl</Filter>
+    <ClInclude Include="GridCtrl\GridCell.h">
+      <Filter>GridCtrl</Filter>
     </ClInclude>
-    <ClInclude Include="MFCGridCtrl\GridCellBase.h">
-      <Filter>MFCGridCtrl</Filter>
+    <ClInclude Include="GridCtrl\GridCellBase.h">
+      <Filter>GridCtrl</Filter>
     </ClInclude>
-    <ClInclude Include="MFCGridCtrl\GridCtrl.h">
-      <Filter>MFCGridCtrl</Filter>
+    <ClInclude Include="GridCtrl\GridCtrl.h">
+      <Filter>GridCtrl</Filter>
     </ClInclude>
-    <ClInclude Include="MFCGridCtrl\GridCtrlUtil.h">
-      <Filter>MFCGridCtrl</Filter>
+    <ClInclude Include="GridCtrl\GridCtrlUtil.h">
+      <Filter>GridCtrl</Filter>
     </ClInclude>
-    <ClInclude Include="MFCGridCtrl\GridDropTarget.h">
-      <Filter>MFCGridCtrl</Filter>
+    <ClInclude Include="GridCtrl\InPlaceEdit.h">
+      <Filter>GridCtrl</Filter>
     </ClInclude>
-    <ClInclude Include="MFCGridCtrl\InPlaceEdit.h">
-      <Filter>MFCGridCtrl</Filter>
+    <ClInclude Include="GridCtrl\MemDC.h">
+      <Filter>GridCtrl</Filter>
     </ClInclude>
-    <ClInclude Include="MFCGridCtrl\MemDC.h">
-      <Filter>MFCGridCtrl</Filter>
+    <ClInclude Include="GridCtrl\TitleTip.h">
+      <Filter>GridCtrl</Filter>
     </ClInclude>
-    <ClInclude Include="MFCGridCtrl\TitleTip.h">
-      <Filter>MFCGridCtrl</Filter>
+    <ClInclude Include="GridCtrl\CellTypes\GridCellButton.h">
+      <Filter>GridCtrl\CellTypes</Filter>
     </ClInclude>
-    <ClInclude Include="MFCGridCtrl\CellTypes\GridCellButton.h">
-      <Filter>MFCGridCtrl\CellTypes</Filter>
+    <ClInclude Include="GridCtrl\CellTypes\GridCellCheck.h">
+      <Filter>GridCtrl\CellTypes</Filter>
     </ClInclude>
-    <ClInclude Include="MFCGridCtrl\CellTypes\GridCellCheck.h">
-      <Filter>MFCGridCtrl\CellTypes</Filter>
+    <ClInclude Include="GridCtrl\CellTypes\GridCellCombo.h">
+      <Filter>GridCtrl\CellTypes</Filter>
     </ClInclude>
-    <ClInclude Include="MFCGridCtrl\CellTypes\GridCellCombo.h">
-      <Filter>MFCGridCtrl\CellTypes</Filter>
+    <ClInclude Include="GridCtrl\CellTypes\GridCellDateTime.h">
+      <Filter>GridCtrl\CellTypes</Filter>
     </ClInclude>
-    <ClInclude Include="MFCGridCtrl\CellTypes\GridCellDateTime.h">
-      <Filter>MFCGridCtrl\CellTypes</Filter>
+    <ClInclude Include="GridCtrl\CellTypes\GridCellGroup.h">
+      <Filter>GridCtrl\CellTypes</Filter>
     </ClInclude>
-    <ClInclude Include="MFCGridCtrl\CellTypes\GridCellGroup.h">
-      <Filter>MFCGridCtrl\CellTypes</Filter>
+    <ClInclude Include="GridCtrl\CellTypes\GridCellNumeric.h">
+      <Filter>GridCtrl\CellTypes</Filter>
     </ClInclude>
-    <ClInclude Include="MFCGridCtrl\CellTypes\GridCellNumeric.h">
-      <Filter>MFCGridCtrl\CellTypes</Filter>
+    <ClInclude Include="GridCtrl\CellTypes\GridCellTerminal.h">
+      <Filter>GridCtrl\CellTypes</Filter>
     </ClInclude>
-    <ClInclude Include="MFCGridCtrl\CellTypes\GridCellTerminal.h">
-      <Filter>MFCGridCtrl\CellTypes</Filter>
+    <ClInclude Include="GridCtrl\CellTypes\GridURLCell.h">
+      <Filter>GridCtrl\CellTypes</Filter>
     </ClInclude>
-    <ClInclude Include="MFCGridCtrl\CellTypes\GridURLCell.h">
-      <Filter>MFCGridCtrl\CellTypes</Filter>
+    <ClInclude Include="TabCtrl\TabCtrl.h">
+      <Filter>TabCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl\GridDropTarget.h">
+      <Filter>GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="GridListCtrlEx\CGridColumnTrait.h">
+      <Filter>GridListCtrlEx</Filter>
+    </ClInclude>
+    <ClInclude Include="GridListCtrlEx\CGridColumnTraitCombo.h">
+      <Filter>GridListCtrlEx</Filter>
+    </ClInclude>
+    <ClInclude Include="GridListCtrlEx\CGridColumnTraitDateTime.h">
+      <Filter>GridListCtrlEx</Filter>
+    </ClInclude>
+    <ClInclude Include="GridListCtrlEx\CGridColumnTraitEdit.h">
+      <Filter>GridListCtrlEx</Filter>
+    </ClInclude>
+    <ClInclude Include="GridListCtrlEx\CGridColumnTraitHyperLink.h">
+      <Filter>GridListCtrlEx</Filter>
+    </ClInclude>
+    <ClInclude Include="GridListCtrlEx\CGridColumnTraitImage.h">
+      <Filter>GridListCtrlEx</Filter>
+    </ClInclude>
+    <ClInclude Include="GridListCtrlEx\CGridColumnTraitMultilineEdit.h">
+      <Filter>GridListCtrlEx</Filter>
+    </ClInclude>
+    <ClInclude Include="GridListCtrlEx\CGridColumnTraitText.h">
+      <Filter>GridListCtrlEx</Filter>
+    </ClInclude>
+    <ClInclude Include="GridListCtrlEx\CGridColumnTraitVisitor.h">
+      <Filter>GridListCtrlEx</Filter>
+    </ClInclude>
+    <ClInclude Include="GridListCtrlEx\CGridListCtrlEx.h">
+      <Filter>GridListCtrlEx</Filter>
+    </ClInclude>
+    <ClInclude Include="GridListCtrlEx\CGridListCtrlGroups.h">
+      <Filter>GridListCtrlEx</Filter>
+    </ClInclude>
+    <ClInclude Include="GridListCtrlEx\CGridRowTrait.h">
+      <Filter>GridListCtrlEx</Filter>
+    </ClInclude>
+    <ClInclude Include="GridListCtrlEx\CGridRowTraitText.h">
+      <Filter>GridListCtrlEx</Filter>
+    </ClInclude>
+    <ClInclude Include="GridListCtrlEx\CGridRowTraitVisitor.h">
+      <Filter>GridListCtrlEx</Filter>
+    </ClInclude>
+    <ClInclude Include="GridListCtrlEx\CGridRowTraitXP.h">
+      <Filter>GridListCtrlEx</Filter>
+    </ClInclude>
+    <ClInclude Include="GridListCtrlEx\ViewConfigSection.h">
+      <Filter>GridListCtrlEx</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiPaneCtrl\DockingMarkers.h">
+      <Filter>MultiPaneCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiPaneCtrl\MultiPaneCtrl.h">
+      <Filter>MultiPaneCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="ToolBoxCtrl\ToolBoxCtrl.h">
+      <Filter>ToolBoxCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="SplitterCtrl\SplitterCtrl.h">
+      <Filter>SplitterCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="PngAnimation\PngAnimation.h">
+      <Filter>PngAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="OutlookTabCtrl\OutlookTabCtrl.h">
+      <Filter>OutlookTabCtrl</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

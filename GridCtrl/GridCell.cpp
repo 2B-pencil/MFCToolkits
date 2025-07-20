@@ -80,6 +80,7 @@ void CGridCell::Reset()
     m_nFormat = (DWORD)-1;       // Use default from CGridDefaultCell
     m_crBkClr = CLR_DEFAULT;     // Background colour (or CLR_DEFAULT)
     m_crFgClr = CLR_DEFAULT;     // Forground colour (or CLR_DEFAULT)
+    m_crFrClr = CLR_DEFAULT;     // Frame colour (or CLR_DEFAULT)
     m_nMargin = (UINT)-1;        // Use default from CGridDefaultCell
 
     delete m_plfFont;
@@ -224,7 +225,24 @@ CGridDefaultCell::CGridDefaultCell()
     SetFont(&lf);
 #else // not CE
     NONCLIENTMETRICS ncm;
+#if defined(_MSC_VER) && (_MSC_VER < 1300)
+    ncm.cbSize = sizeof(NONCLIENTMETRICS); // NONCLIENTMETRICS has an extra element after VC6
+#else
+    // Check the operating system's version
+    OSVERSIONINFOEX osvi;
+    ZeroMemory(&osvi, sizeof(OSVERSIONINFOEX));
+    osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEX);
+    if( !GetVersionEx((OSVERSIONINFO *) &osvi))
+    {
+    	osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);	
+        GetVersionEx ((OSVERSIONINFO *)&osvi);
+    }
+    
+    if (osvi.dwMajorVersion > 5)
     ncm.cbSize = sizeof(NONCLIENTMETRICS);
+    else
+	    ncm.cbSize = sizeof(NONCLIENTMETRICS) - sizeof(ncm.iPaddedBorderWidth);
+#endif
     VERIFY(SystemParametersInfo(SPI_GETNONCLIENTMETRICS, sizeof(NONCLIENTMETRICS), &ncm, 0));
     SetFont(&(ncm.lfMessageFont));
 #endif
