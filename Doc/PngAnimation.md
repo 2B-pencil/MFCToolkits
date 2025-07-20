@@ -1,12 +1,12 @@
 # PngAnimation
 
-![Example](./PngAnimation/image.gif)
+![Example](PngAnimation/image.gif)
 
 ## Introduction
 
 Often the program needs to show that it is currently performing some action. For example, a project is being loaded, a device is being searched, data is being converted or new data is being generated. In such cases, animation is used. One of the easiest ways to do this is to draw a graphic file that looks like this:
 
-![Example](./PngAnimation/process.png)
+![Example](PngAnimation/process.png)
 
 Frames are shown from left to right at regular intervals.
 

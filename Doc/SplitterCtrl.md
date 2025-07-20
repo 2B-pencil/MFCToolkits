@@ -1,6 +1,6 @@
 # SplitterCtrl
 
-![Example](./SplitterCtrl/image.png)
+![Example](SplitterCtrl/image.png)
 
 ## Introduction
 

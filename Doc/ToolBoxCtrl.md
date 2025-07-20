@@ -1,6 +1,6 @@
 # ToolBoxCtrl
 
-![Example](./ToolBoxCtrl/image.png)
+![Example](ToolBoxCtrl/image.png)
 
 ## Introduction
 

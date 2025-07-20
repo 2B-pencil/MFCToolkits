@@ -1,6 +1,6 @@
 # MultiPaneCtrl
 
-![Example](./MultiPaneCtrl/main.png)
+![Example](MultiPaneCtrl/main.png)
 
 ## Introduction
 
@@ -29,55 +29,55 @@ The basic rules for working with the control are:
 
 1. Initial state.
 
-   ![Example](./MultiPaneCtrl/example1.1.png)
+   ![Example](MultiPaneCtrl/example1.1.png)
 
 2. Adding tabs to the root pane (`MultiPaneCtrl::AddTab`).
 
-   ![Example](./MultiPaneCtrl/example1.2.png)
+   ![Example](MultiPaneCtrl/example1.2.png)
 
 3. Conversion the root pane to a line (`MultiPaneCtrl::ConvertPaneToLine`).
 
-   ![Example](./MultiPaneCtrl/example1.3.png)
+   ![Example](MultiPaneCtrl/example1.3.png)
 
 4. Adding a child pane to the root pane (`MultiPaneCtrl::AddPane`).
 
-   ![Example](./MultiPaneCtrl/example1.4.png)
+   ![Example](MultiPaneCtrl/example1.4.png)
 
 5. Conversion Pane2 to a line (`MultiPaneCtrl::ConvertPaneToLine`).
 
-   ![Example](./MultiPaneCtrl/example1.5.png)
+   ![Example](MultiPaneCtrl/example1.5.png)
 
 6. Adding a child pane to Pane2 (`MultiPaneCtrl::AddPane`).
 
-   ![Example](./MultiPaneCtrl/example1.6.png)
+   ![Example](MultiPaneCtrl/example1.6.png)
 
 7. Adding tabs to Pane3 and Pane4 (`MultiPaneCtrl::AddTab`).
 
-   ![Example](./MultiPaneCtrl/example1.7.png)
+   ![Example](MultiPaneCtrl/example1.7.png)
 
 ##### Removing panes from `MultiPaneCtrl`. Example 1:
 
 1. Initial state.
 
-   ![Example](./MultiPaneCtrl/example2.1.png)
+   ![Example](MultiPaneCtrl/example2.1.png)
 
 2. Removing Pane3 (`MultiPaneCtrl::DeletePane`).
 
-   ![Example](./MultiPaneCtrl/example2.2.png)
+   ![Example](MultiPaneCtrl/example2.2.png)
 
 3. Removing Pane2 (`MultiPaneCtrl::DeletePane`).
 
-   ![Example](./MultiPaneCtrl/example2.3.png)
+   ![Example](MultiPaneCtrl/example2.3.png)
 
 ##### Removing panes from `MultiPaneCtrl`. Example 2:
 
 1. Initial state.
 
-   ![Example](./MultiPaneCtrl/example3.1.png)
+   ![Example](MultiPaneCtrl/example3.1.png)
 
 2. Removing Pane2 (`MultiPaneCtrl::DeletePane`).
 
-   ![Example](./MultiPaneCtrl/example3.2.png)
+   ![Example](MultiPaneCtrl/example3.2.png)
 
 For each pane which doesn’t have child panes, by default, a `TabCtrl` control is created. This control is also developed by me, and you can find it at https://github.com/baradzenka/TabCtrl . All `TabCtrl` controls are created as child windows for `MultiPaneCtrl` and do not form additional levels of nesting. This is especially important because modern versions of Windows have a limited number of nesting windows in each other, which often does not exceed 13-15. The function `GetTabCtrl` allows you to get a pointer to `TabCtrl`. It can be called only for a pane which is not a line. You can use this pointer for a specific tabbed pane, or you can simply call methods of the `MultiPaneCtrl` class to manipulate the tabs. For example, to add a tab to a pane, use the function `MultiPaneCtrl::AddTab`.
 
@@ -167,7 +167,7 @@ Some styles have already been created. For example, styles similar to the dockin
 In the process of pulling tabs with the mouse for better visualization, we can use markers. They appear on the panes, and when you hover on them, they show the position of the future insertion of the tab. To use them, you need to call `SetDockingMarkers`. One of the parameters of this function is an object for defining the graphic resources of markers and the location of their parts on the screen to create the appearance of the marker. This demo project includes five classes (`MarkersLayoutA` ... `MarkersLayoutE`) describing the appearance of markers.
 
 <p align="center">
-<img src="./MultiPaneCtrl/markers.png">
+<img src="MultiPaneCtrl/markers.png">
 </p>
 
 

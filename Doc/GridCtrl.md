@@ -1,8 +1,8 @@
 # MFC Grid control 2.27
 
-![](./GridCtrl/gridctrl.gif)
+![](GridCtrl/gridctrl.gif)
 
-![](./GridCtrl/gridviewdemo.png)
+![](GridCtrl/gridviewdemo.png)
 
 ## Preface
 

@@ -1,6 +1,6 @@
 # OutlookTabCtrl
 
-![Example](./OutlookTabCtrl/image.png)
+![Example](OutlookTabCtrl/image.png)
 
 ## Introduction
 

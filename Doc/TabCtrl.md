@@ -1,6 +1,6 @@
 # TabCtrl
 
-![Example](./TabCtrl/main.png)
+![Example](TabCtrl/main.png)
 
 ## Introduction
 
@@ -13,7 +13,7 @@ This control is based on `CWnd` class and can be placed as a child window anywhe
 ## Using the Code
 Child windows are added using their `HWND` and they can be of any type, for example modeless dialogs. `TabCtrl` consists of three areas: control area, tabs area, windows area. This knowledge can be useful to you when creating a drawing class and working with `TabCtrl` functions.
 
-![Example](./TabCtrl/areas.png)
+![Example](TabCtrl/areas.png)
 
 To create the control and add elements to it, you can do the next steps:
 
