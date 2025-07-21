@@ -45,7 +45,7 @@ protected:
 //------------------------------------------------------------------------
 //! CEdit for inplace edit. For internal use by CGridColumnTraitEdit
 //------------------------------------------------------------------------
-class TAO_DLLIMPEXP CGridEditorText : public CEdit
+class CGridEditorText : public CEdit
 {
 	DECLARE_DYNAMIC(CGridEditorText)
 

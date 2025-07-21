@@ -14,13 +14,13 @@
 //------------------------------------------------------------------------
 //! CGridColumnTraitText - Constructor
 //------------------------------------------------------------------------
-CGridColumnTraitText::CGridColumnTraitText()
+CGridColumnTraitText::CGridColumnTraitText(const bool& setSortFormatNumber)
 	: m_pOldFont(NULL)
 	, m_TextColor(COLORREF(-1))
 	, m_BackColor(COLORREF(-1))
 	, m_OldTextColor(COLORREF(-1))
 	, m_OldBackColor(COLORREF(-1))
-	, m_SortFormatNumber(false)
+	, m_SortFormatNumber(setSortFormatNumber)
 {}
 
 //------------------------------------------------------------------------

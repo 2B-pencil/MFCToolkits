@@ -29,6 +29,14 @@
 #pragma once
 #endif // _MSC_VER >= 1000
 
+#ifndef ltmax
+#define ltmax(a,b)            (((a) > (b)) ? (a) : (b))
+#endif
+
+#ifndef ltmin
+#define ltmin(a,b)            (((a) < (b)) ? (a) : (b))
+#endif
+
 // The code contained in this file is based on the original
 // WorldCom Grid control written by Joe Willcoxson,
 //      mailto:chinajoe@aol.com
@@ -147,8 +155,8 @@ inline CCellID CCellRange::GetTopLeft() const
 
 inline CCellRange CCellRange::Intersect(const CCellRange& rhs) const
 {
-     return CCellRange(max(m_nMinRow,rhs.m_nMinRow), max(m_nMinCol,rhs.m_nMinCol),
-                       min(m_nMaxRow,rhs.m_nMaxRow), min(m_nMaxCol,rhs.m_nMaxCol));
+     return CCellRange(ltmax(m_nMinRow,rhs.m_nMinRow), ltmax(m_nMinCol,rhs.m_nMinCol),
+         ltmin(m_nMaxRow,rhs.m_nMaxRow), ltmin(m_nMaxCol,rhs.m_nMaxCol));
 }
 
 #endif // !defined(AFX_CELLRANGE_H__F86EF761_725A_11D1_ABBA_00A0243D1382__INCLUDED_)

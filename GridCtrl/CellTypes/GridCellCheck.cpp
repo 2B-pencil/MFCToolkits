@@ -35,7 +35,6 @@
 #include "pch.h"
 #include "../GridCell.h"
 #include "../GridCtrl.h"
-
 #include "GridCellCheck.h"
 
 
@@ -64,7 +63,7 @@ CSize CGridCellCheck::GetCellExtent(CDC* pDC)
     int nWidth = GetSystemMetrics(SM_CXHSCROLL) + 2*GetMargin();	
     CSize	cellSize = CGridCell::GetCellExtent(pDC);	
     cellSize.cx += nWidth;	
-    cellSize.cy = max (cellSize.cy, nWidth);	
+    cellSize.cy = max(cellSize.cy, (LONG)nWidth);
     return  cellSize;
 }
 

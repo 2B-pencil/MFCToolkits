@@ -63,6 +63,7 @@
     <ProjectGuid>{E0865B03-DD19-472D-B94C-08CCF44A6B2D}</ProjectGuid>
     <Keyword>MFCDLLProj</Keyword>
     <RootNamespace>MFCToolkits</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
     <!--WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion-->
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)'=='vc143'or'$(Configuration)'=='vc142'or'$(Configuration)'=='vc143d'">

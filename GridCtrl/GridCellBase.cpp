@@ -178,9 +178,9 @@ BOOL CGridCellBase::Draw(CDC* pDC, int nRow, int nCol, CRect rect,  BOOL bEraseB
             bEraseBkgnd = TRUE;
         }
 
+        rect.right++; rect.bottom++;    // FillRect doesn't draw RHS or bottom
         if (bEraseBkgnd)
         {
-            rect.right++; rect.bottom++;    // FillRect doesn't draw RHS or bottom
             TRY 
             {
                 CBrush brush(TextBkClr);
@@ -191,49 +191,23 @@ BOOL CGridCellBase::Draw(CDC* pDC, int nRow, int nCol, CRect rect,  BOOL bEraseB
                 //e->ReportError();
             }
             END_CATCH
-            rect.right--; rect.bottom--;
+        }
+
+        // Don't adjust frame rect if no grid lines so that the
+        // whole cell is enclosed.
+        if(pGrid->GetGridLines() != GVL_NONE)
+        {
+            rect.right--;
+            rect.bottom--;
         }
 
         if (pGrid->GetFrameFocusCell())
         {
-            FrameClr = TextClr;
-        }
-
-		//rect.DeflateRect(0,1,1,1);  - Removed by Yogurt
-    }
-    else if ((GetState() & GVIS_SELECTED))
-    {
-        rect.right++; rect.bottom++;    // FillRect doesn't draw RHS or bottom
-        pDC->FillSolidRect(rect, ::GetSysColor(COLOR_HIGHLIGHT));
-        rect.right--; rect.bottom--;
-        pDC->SetTextColor(::GetSysColor(COLOR_HIGHLIGHTTEXT));
-    }
-    else
-    {
-        if (bEraseBkgnd)
-        {
-            rect.right++; rect.bottom++;    // FillRect doesn't draw RHS or bottom
-            CBrush brush(TextBkClr);
-            pDC->FillRect(rect, &brush);
-            rect.right--; rect.bottom--;
-        }
-        pDC->SetTextColor(TextClr);
-    }
-
-    if (FrameClr != CLR_DEFAULT) {
-        // Don't adjust frame rect if no grid lines so that the
-        // whole cell is enclosed.
-        if (pGrid->GetGridLines() == GVL_NONE)
-        {
-            rect.right++;
-            rect.bottom++;
-        }
-
                 // Use same color as text to outline the cell so that it shows
                 // up if the background is black.
             TRY 
             {
-            CBrush brush(FrameClr);
+                CBrush brush(FrameClr);
                 pDC->FrameRect(rect, &brush);
             }
             CATCH(CResourceException, e)
@@ -241,7 +215,7 @@ BOOL CGridCellBase::Draw(CDC* pDC, int nRow, int nCol, CRect rect,  BOOL bEraseB
                 //e->ReportError();
             }
             END_CATCH
-      
+        }
 
         pDC->SetTextColor(TextClr);
 
@@ -643,7 +617,7 @@ CSize CGridCellBase::GetCellExtent(CDC* pDC)
         }    
     }    
     size.cx += ImageSize.cx + 1;    
-    size.cy = max(size.cy, ImageSize.cy) + 1;    
+    size.cy = max(size.cy, ImageSize.cy) + 1;
     if (IsFixed())    
     {        
         size.cx++;        

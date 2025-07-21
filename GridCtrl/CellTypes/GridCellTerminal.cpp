@@ -62,7 +62,7 @@ CSize CGridCellTerminal::GetCellExtent( CDC* pDC )
         }    
     }    
     size.cx += ImageSize.cx + 1;    
-    size.cy = max(size.cy, ImageSize.cy) + 1;    
+    size.cy = max(size.cy, ImageSize.cy) + 1;
     if (IsFixed())    
     {        
         size.cx++;        
