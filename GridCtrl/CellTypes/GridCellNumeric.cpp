@@ -890,9 +890,13 @@ BOOL CGridCellNumeric::Format(CString &TheString)
                 // we cannot simply chop it off as the formatting
                 // may have left trailing sign characters
                 int pos = Formatted.Find(cDecimal, 0);
-                Formatted.Delete(pos);
-                while (pos < Formatted.GetLength() && Formatted[pos] == sDigits[0])
-                    Formatted.Delete(pos);
+                if (pos != -1)
+                {
+					Formatted.Delete(pos);
+					while (pos < Formatted.GetLength() && Formatted[pos] == sDigits[0])
+						Formatted.Delete(pos);
+                }
+
             }
 
             // Only update m_nNumber if everything above succeeded
